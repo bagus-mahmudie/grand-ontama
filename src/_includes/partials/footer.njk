@@ -1,0 +1,58 @@
+{% from "components/icon.njk" import icon %}
+<footer class="site-footer relative overflow-hidden bg-[#315f7c] px-4 pb-8 pt-8 sm:px-6 sm:pb-10 sm:pt-10 lg:px-10 lg:pb-12">
+  <img src="/assets/img/home-footer-background.png" alt="Deretan rumah Grand Ontama" width="1440" height="738" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <div class="relative mx-auto mb-8 flex w-full max-w-[492px] items-center justify-between gap-3 rounded-xl border border-white/90 bg-white/20 px-5 py-4 backdrop-blur-sm sm:mb-10 sm:gap-6 sm:px-7">
+    <img src="/assets/img/banks/Bank_Negara_Indonesia.png" alt="Bank_Negara_Indonesia" width="127" height="37" loading="lazy" decoding="async" class="h-auto w-20 shrink-0 object-contain sm:w-28">
+    <img src="/assets/img/banks/Bank-BTN.png" alt="Bank-BTN" width="75" height="50" loading="lazy" decoding="async" class="h-auto w-12 shrink-0 object-contain sm:w-16">
+    <img src="/assets/img/banks/Bank-OCBC.png" alt="Bank-OCBC" width="50" height="50" loading="lazy" decoding="async" class="h-auto w-8 shrink-0 object-contain sm:w-11">
+    <img src="/assets/img/banks/Bank-Syariah-Nasional.png" alt="Bank-Syariah-Nasional" width="73" height="54" loading="lazy" decoding="async" class="h-auto w-12 shrink-0 object-contain sm:w-16">
+  </div>
+
+  <div class="relative mx-auto max-w-7xl rounded-3xl bg-white px-6 py-8 shadow-[0_25px_70px_rgba(0,0,0,0.20)] sm:px-9 lg:px-10 lg:pt-8 lg:pb-6">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.45fr_.65fr_.65fr_1fr] lg:gap-12">
+      <div>
+        <a href="/" aria-label="Grand Ontama" class="inline-flex">
+          <img src="/assets/img/footer-grand-ontama.webp" alt="footer-grand-ontama" class="h-20 sm:h-30 w-auto">
+        </a>
+        <p class="mt-5 max-w-sm text-[15px] leading-6.5 text-neutral-500 sm:text-base">
+          Grand Ontama adalah hunian dua lantai yang menawarkan kenyamanan dengan harga terjangkau, fasilitas terbaik, dan lokasi strategis.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="border-b border-neutral-300 pb-3 text-lg font-medium text-neutral-900">Halaman</h2>
+        <ul class="mt-4 space-y-3  text-neutral-500 text-base">
+          {% for item in navigation %}
+          <li><a href="{{ item.url }}" class="transition hover:text-[#0866AE] font-normal">{{ item.label }}</a></li>
+          {% endfor %}
+          <li><a href="/kontak" class="transition hover:text-[#0866AE] font-normal">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="border-b border-neutral-300 pb-3 text-lg font-medium text-neutral-900">Rumah Dijual</h2>
+        <ul class="mt-4 space-y-3 text-neutral-500 text-base">
+          <li><a href="/jual-rumah" class="transition hover:text-[#0866AE] font-normal">Luxora</a></li>
+          <li><a href="/rumah-2-lantai-di-bogor" class="transition hover:text-[#0866AE] font-normal">Verona</a></li>
+          <li><a href="/rumah-tangsel" class="transition hover:text-[#0866AE] font-normal">Melodia</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="border-b border-neutral-300 pb-3 text-lg font-medium text-neutral-900">Alamat</h2>
+        <p class="mt-4 leading-7 text-neutral-500 text-base">{{ site.address }}</p>
+      </div>
+    </div>
+
+    <div class="mt-9 flex flex-col gap-5 border-t border-neutral-300 pt-4 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-sm text-neutral-500">All Rights Reserved ©2026 Grand Ontama | PT Omah Lentera Inovasi</p>
+      <div class="flex items-center gap-2">
+        <a href="https://www.instagram.com/grandontama" target="_blank" rel="noopener noreferrer" aria-label="Instagram Grand Ontama" class="grid h-10 w-10 place-items-center rounded-full bg-neutral-100 transition hover:bg-neutral-200">{{ icon('instagram-grandontama', 'size-5', 'instagram-grandontama') }}</a>
+        <a href="https://youtu.be/1VvZTPfR_x4" target="_blank" rel="noopener noreferrer" aria-label="YouTube Grand Ontama" class="grid h-10 w-10 place-items-center rounded-full bg-neutral-100 transition hover:bg-neutral-200">{{ icon('youtube-grandontama', 'size-5', 'youtube-grandontama') }}</a>
+        <a href="https://www.tiktok.com/@grandontama" target="_blank" rel="noopener noreferrer" aria-label="TikTok Grand Ontama" class="grid h-10 w-10 place-items-center rounded-full bg-neutral-100 transition hover:bg-neutral-200">{{ icon('tiktok-grandontama', 'size-5', 'tiktok-grandontama') }}</a>
+      </div>
+    </div>
+  </div>
+</footer>

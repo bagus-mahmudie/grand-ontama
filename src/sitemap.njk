@@ -1,0 +1,24 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for item in collections.all %}
+{% if item.outputPath and item.outputPath.endsWith('.html') and item.url != '/404.html' and not item.url.startsWith('/blogs/') %}
+  <url>
+    <loc>{{ site.url }}{% if item.url == '/index.html' %}/{% else %}{{ item.url | replace('.html', '') }}{% endif %}</loc>
+    <lastmod>{{ (item.data.updatedAt or item.data.publishedAt or item.date) | dateToIso }}</lastmod>
+  </url>
+{% endif %}
+{% endfor %}
+{% for item in collections.all %}
+{% if item.outputPath and item.outputPath.endsWith('.html') and item.url.startsWith('/blogs/') %}
+  <url>
+    <loc>{{ site.url }}{% if item.url == '/index.html' %}/{% else %}{{ item.url | replace('.html', '') }}{% endif %}</loc>
+    <lastmod>{{ (item.data.updatedAt or item.data.publishedAt or item.date) | dateToIso }}</lastmod>
+  </url>
+{% endif %}
+{% endfor %}
+</urlset>

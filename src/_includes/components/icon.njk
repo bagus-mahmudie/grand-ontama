@@ -1,0 +1,4 @@
+{# Reusable local WebP icon generated losslessly from the supplied artwork. #}
+{% macro icon(name, className = '', altText = name) %}
+<img src="/assets/icons/{{ name }}.webp" alt="{{ altText }}" class="local-icon {{ className }}" decoding="async">
+{% endmacro %}

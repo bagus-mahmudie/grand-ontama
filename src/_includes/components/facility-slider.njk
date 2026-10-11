@@ -1,0 +1,19 @@
+{% from "components/icon.njk" import icon %}
+<div class="relative mt-12">
+  <div data-home-carousel data-loop-carousel data-drag-carousel class="home-horizontal-carousel home-facility-carousel flex gap-3 lg:gap-5 overflow-x-auto">
+    {% for facility in facilities %}
+    <article class="home-facility-card">
+      <div class="home-facility-media">
+        <img src="{{ facility.image }}" alt="{{ facility.alt }}" width="768" height="480" loading="lazy" decoding="async" draggable="false" class="home-facility-image">
+        <a href="/assets/docs/fasilitas-grand-ontama.pdf" target="_blank" rel="noopener noreferrer" class="home-facility-detail">Grand Ontama Sarana {{ icon('download', 'size-5', 'grand ontama sarana') }}</a>
+      </div>
+      <div class="home-facility-content">
+        <h3>{{ facility.title }}</h3>
+        <p>{{ facility.description }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <button data-carousel-prev type="button" aria-label="Fasilitas sebelumnya" class="slider-arrow slider-arrow-light home-facility-prev left-2">{{ icon('chevron-left', 'size-5', 'prev') }}</button>
+  <button data-carousel-next type="button" aria-label="Fasilitas berikutnya" class="slider-arrow slider-arrow-light home-facility-next right-2">{{ icon('chevron-right', 'size-5', 'next') }}</button>
+</div>

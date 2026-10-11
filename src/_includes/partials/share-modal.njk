@@ -1,0 +1,27 @@
+{% from "components/icon.njk" import icon %}
+<div id="shareModal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/35 p-4" role="presentation" aria-hidden="true">
+  <section data-share-dialog role="dialog" aria-modal="true" aria-labelledby="shareModalTitle" tabindex="-1" class="w-full max-w-sm rounded-2xl bg-white p-5 shadow-[0_24px_70px_rgba(0,0,0,.24)] sm:max-w-md sm:p-6">
+    <div class="flex items-center justify-between">
+      <h2 id="shareModalTitle" class="text-2xl font-medium text-neutral-800">Share</h2>
+      <button type="button" data-share-close aria-label="Tutup modal bagikan" class="grid h-9 w-9 place-items-center rounded-full text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-800">{{ icon('close', 'size-5', 'tutup-modal-bagikan') }}</button>
+    </div>
+
+    <div class="mt-8 grid grid-cols-3 gap-x-4 gap-y-7">
+      <button type="button" data-share-app="whatsapp" class="share-option"><span class="share-option-icon"><img src="/assets/icons/whatsapp.webp" alt="whatsapp" class="h-12 w-12 object-contain"></span><span>WhatsApp</span></button>
+      <button type="button" data-share-app="instagram" class="share-option"><span class="share-option-icon"><img src="/assets/icons/social-instagram.webp" alt="instagram" class="h-11 w-11 object-contain"></span><span>Instagram</span></button>
+      <button type="button" data-share-app="facebook" class="share-option"><span class="share-option-icon"><img src="/assets/icons/facebook.webp" alt="facebook" class="h-12 w-12 object-contain"></span><span>Facebook</span></button>
+      <button type="button" data-share-app="tiktok" class="share-option"><span class="share-option-icon"><img src="/assets/icons/social-tiktok.webp" alt="tiktok" class="h-11 w-11 object-contain"></span><span>Tiktok</span></button>
+      <button type="button" data-share-app="telegram" class="share-option"><span class="share-option-icon"><img src="/assets/icons/telegram.webp" alt="telegram" class="h-12 w-12 object-contain"></span><span>Telegram</span></button>
+      <button type="button" data-share-app="discord" class="share-option"><span class="share-option-icon"><img src="/assets/icons/discord.webp" alt="discord" class="h-12 w-12 object-contain"></span><span>Discord</span></button>
+    </div>
+
+    <div class="mt-10">
+      <label for="sharePageLink" class="text-xl font-normal text-neutral-800">Page Link</label>
+      <div class="mt-4 flex h-14 items-center rounded-lg border border-neutral-300 bg-white px-4">
+        <input id="sharePageLink" data-share-url type="text" readonly aria-label="Tautan halaman" class="min-w-0 flex-1 bg-transparent text-lg text-neutral-500 outline-none">
+        <button type="button" data-share-copy aria-label="Salin tautan halaman" class="ml-3 grid h-9 w-9 shrink-0 place-items-center rounded-md text-neutral-800 transition hover:bg-neutral-100">{{ icon('copy', 'size-6', 'salin-tautan-halaman') }}</button>
+      </div>
+      <p data-share-status class="sr-only" aria-live="polite"></p>
+    </div>
+  </section>
+</div>

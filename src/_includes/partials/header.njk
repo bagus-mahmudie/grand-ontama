@@ -1,0 +1,47 @@
+{% from "components/icon.njk" import icon %}
+<header data-navbar class="site-navbar fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-10 lg:pt-7">
+  <nav class="mx-auto flex h-15 max-w-7xl items-center justify-between rounded-full border border-white/70 bg-white/95 pl-5 pr-3 shadow-[0_10px_35px_rgba(15,76,120,0.10)] backdrop-blur sm:h-17 sm:px-5 lg:px-7" aria-label="Navigasi utama">
+    <a href="/" aria-label="grand-ontama-logo - Beranda" class="inline-flex shrink-0 items-center">
+      <img src="/assets/img/grand-ontama-logo.webp" alt="grand-ontama-logo" class="h-11 w-auto sm:h-14">
+    </a>
+
+    <div class="hidden items-center gap-8 lg:flex">
+      {% for item in navigation %}
+      <a data-nav-link data-page="{{ item.key }}" href="{{ item.url }}" class="relative py-2 text-lg font-medium text-neutral-500 transition hover:text-neutral-950 data-[active=true]:font-medium data-[active=true]:text-neutral-950">
+        {{ item.label }}
+      </a>
+      {% endfor %}
+    </div>
+
+    <a href="/kontak" class="hidden min-w-38 items-center justify-center rounded-full bg-[#0866AE] px-7 py-3 text-base font-medium text-white transition hover:bg-[#0879BD] lg:inline-flex">
+      Konsultasi
+    </a>
+
+    <button data-mobile-open type="button" aria-label="Buka menu" aria-expanded="false" class="grid h-10 w-10 place-items-center rounded-full bg-transparent text-xl text-[#0866AE] lg:hidden">
+      {{ icon('menu', 'size-6', 'buka-menu') }}
+    </button>
+  </nav>
+</header>
+
+<div data-mobile-overlay class="fixed inset-0 z-50 hidden bg-slate-950/40 backdrop-blur-sm lg:hidden"></div>
+
+<aside data-mobile-panel class="fixed bottom-0 right-0 top-0 z-60 flex w-[86%] max-w-sm translate-x-full flex-col bg-white p-5 shadow-2xl transition-transform duration-300 lg:hidden">
+  <div class="flex items-center justify-between border-b border-neutral-100 pb-3">
+    <img src="/assets/img/grand-ontama-logo.webp" alt="grand-ontama-logo" class="h-14 w-auto">
+    <button data-mobile-close type="button" aria-label="Tutup menu" class="grid h-10 w-10 place-items-start rounded-full bg-transparent text-xl text-neutral-700">
+      {{ icon('close', 'size-6', 'tutup-menu') }}
+    </button>
+  </div>
+
+  <nav class="mt-5 space-y-1" aria-label="Navigasi seluler">
+    {% for item in navigation %}
+    <a data-nav-link data-page="{{ item.key }}" href="{{ item.url }}" class="interactive-text-icon flex items-center justify-between rounded-xl px-4 py-4 font-medium text-neutral-600 transition hover:bg-[#0866AE]/10 hover:text-[#0866AE] data-[active=true]:bg-[#0866AE]/10 data-[active=true]:font-semibold data-[active=true]:text-[#0866AE]">
+      <span>{{ item.label }}</span>
+    </a>
+    {% endfor %}
+  </nav>
+
+  <a href="/kontak" class="mt-auto flex items-center justify-center gap-2 rounded-full bg-[#0866AE] px-6 py-4 font-medium text-white">
+    Konsultasi Gratis
+  </a>
+</aside>

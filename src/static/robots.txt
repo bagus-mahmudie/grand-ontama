@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /mailer/
+Disallow: /vendor/
+
+Sitemap: https://grandontama.com/sitemap.xml

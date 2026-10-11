@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+updatedAt: "2026-09-09"
+permalink: 404.html
+title: "Halaman Tidak Ditemukan | Grand Ontama"
+description: "Halaman yang Anda cari tidak ditemukan. Kembali ke situs Grand Ontama untuk melihat hunian terbaik di Bogor."
+canonical: "https://grandontama.com/404"
+ogImage: "https://grandontama.com/assets/img/thumbnail/luxora.webp"
+pageKey: "404"
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{% from "components/icon.njk" import icon %}
+<main class="grid min-h-[70vh] place-items-center bg-neutral-50 px-4 pt-34 text-center">
+  <section class="max-w-5xl pt-10 pb-40">
+    <img src="/assets/img/icon/grand-ontama-404.webp" alt="Ilustrasi halaman tidak ditemukan Grand Ontama" width="612" height="408" decoding="async" class="mx-auto h-auto w-full max-w-[612px] rounded-2xl object-contain">
+    <h1 class="mt-2 text-4xl font-medium text-content-title sm:text-5xl">Halaman tidak ditemukan</h1>
+    <p class="mt-5 leading-7 text-content-grey">Alamat mungkin berubah atau halaman sudah tidak tersedia.</p>
+    <a href="/" class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 font-medium text-white transition hover:bg-[#0879BD]">
+      {{ icon('arrow-left', 'size-5', 'kembali-ke-beranda') }} Kembali ke Beranda
+    </a>
+  </section>
+</main>

@@ -1,0 +1,17 @@
+{% from "components/icon.njk" import icon %}
+<div class="relative min-h-125 overflow-hidden rounded-2xl bg-neutral-200 shadow-[0_18px_50px_rgba(31,41,55,.08)] lg:min-h-full">
+  <iframe
+    title="Peta lokasi Grand Ontama"
+    src="https://www.google.com/maps?q=Grand+Ontama,+Curug,+Gunung+Sindur,+Bogor&output=embed"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    class="absolute inset-0 h-full w-full border-0"
+  ></iframe>
+  <div class="absolute inset-x-4 bottom-4 rounded-2xl bg-white p-5 shadow-[0_16px_40px_rgba(31,41,55,.14)] sm:p-6">
+    <h3 class="text-2xl font-semibold text-neutral-900">Lokasi Grand Ontama</h3>
+    <p class="mt-1 text-base leading-6 sm:leading-7 text-neutral-500">{{ site.address }}</p>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Grand%20Ontama%2C%20Jl.%20Permata%2C%20Curug%2C%20Gunung%20Sindur%2C%20Bogor&amp;travelmode=driving&amp;dir_action=navigate" target="_blank" rel="noopener noreferrer" class="interactive-text-icon mt-4 flex items-center justify-between border-t border-neutral-200 pt-4 font-medium text-neutral-800 transition hover:text-[#0866AE]">
+      <span>Dapatkan Arah</span>{{ icon('arrow-right', 'size-5', 'dapatkan-arah') }}
+    </a>
+  </div>
+</div>

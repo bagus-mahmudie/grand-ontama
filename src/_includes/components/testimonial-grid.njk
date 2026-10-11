@@ -1,0 +1,25 @@
+{% from "components/icon.njk" import icon %}
+{% set sharedTestimonials = [
+  { name: 'Bagus Mahmudie', avatar: '/assets/img/icon/Bagus-Mahmudie.webp', rating: 5, text: 'Fasilitas olahraga nya lengkap dan lokasi strategis membuat Grand Ontama terasa premium namun tetap hangat untuk keluarga.' },
+  { name: 'Budi Siswanto', avatar: '/assets/img/icon/Budi-Siswanto.webp', rating: 4, text: 'Ini cocok banget untuk Milenial dengan rumah secakep ini dan akses sangat strategis banget Mau BSD, jakarta dan Area Central yg lainnya. Pokoknya gak nyesel, Terimakasih Gran ontama kasih yg terbaik' },
+  { name: 'Revans Rakitasati', avatar: '/assets/img/icon/Revans-Rakitasati.webp', rating: 5, text: 'Lokasinya strategis banget, deket mau kemana kemana, apalagi nanti rencananya mau ada mrt, cocok banget buat hunian masa kini' },
+  { name: 'Pulung Adhitiya', avatar: '/assets/img/icon/Pulung-Adhitiya.webp', rating: 5, text: 'Perumahan klasik eropa mantap,aksesnya dkt kemana mana,lingkungan sejukk.nyaman dan mantap' },
+  { name: 'Arif Alfian', avatar: '/assets/img/icon/Arif-Alfian.webp', rating: 4, text: 'Setelah Liat lokasi, ternyata bagus bgt Rumahnya dengan nuansa eropa clasic dan mewah pula,tidak nyesel ambil dsini' },
+  { name: 'Honda Jabodetabek', avatar: '/assets/img/icon/Honda-Jabodetabek.webp', rating: 4, text: 'Ini siih Rumah mewah banget, Trimakasih Pak Alvan Sudah dibantu dijelaskan, bismillah insyaallah dalam waktu dekat saya mau booking untuk keluarga kecil saya' }
+] %}
+<div class="testimonial-slider mt-8 sm:mt-12 pt-4 pb-10 grid gap-3 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+  {% for testimonial in sharedTestimonials %}
+  <article class="rounded-2xl bg-white p-6 shadow-[0_15px_40px_rgba(31,41,55,.06)]">
+    <div class="flex gap-1" aria-label="Rating {{ testimonial.rating }} dari 5">
+      {% for star in range(1, 6) %}
+      {{ icon('star-fill', 'size-5' if star <= testimonial.rating else 'size-5 grayscale opacity-60', 'rating-bintang') }}
+      {% endfor %}
+    </div>
+    <p class="mt-5 line-clamp-4 h-28 overflow-hidden text-base leading-7 text-neutral-500">{{ testimonial.text }}</p>
+    <div class="mt-5 flex items-center gap-4 border-t border-neutral-200 pt-5">
+      <img src="{{ testimonial.avatar }}" alt="{{ testimonial.name }}" width="48" height="48" loading="lazy" class="h-11 w-11 rounded-full object-cover">
+      <div><h3 class="text-lg font-medium text-neutral-900">{{ testimonial.name }}</h3><p class="text-sm text-neutral-400">Customer</p></div>
+    </div>
+  </article>
+  {% endfor %}
+</div>

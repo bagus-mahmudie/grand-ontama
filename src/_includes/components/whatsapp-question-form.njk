@@ -1,0 +1,30 @@
+{% from "components/icon.njk" import icon %}
+<div class="rounded-2xl bg-white p-5 shadow-[0_18px_50px_rgba(31,41,55,.06)] sm:p-7">
+  <h3 class="text-2xl font-semibold text-neutral-900">Kirim Pertanyaan</h3>
+  <p class="mt-2 text-base leading-6 sm:leading-7 text-neutral-500">Data Anda kami jaga sesuai ketentuan kebijakan privasi.</p>
+
+  <form data-whatsapp-question data-whatsapp-number="{{ site.phone }}" class="mt-5 space-y-4">
+    <label class="contact-form-field">
+      <span class="sr-only">Nama lengkap</span>{{ icon('person', 'size-5', 'nama-lengkap') }}
+      <input type="text" name="name" autocomplete="name" maxlength="80" placeholder="Nama lengkap" required>
+    </label>
+    <label class="contact-form-field">
+      <span class="sr-only">Email</span>{{ icon('mail', 'size-5', 'email') }}
+      <input type="email" name="email" autocomplete="email" maxlength="120" placeholder="Email Anda" required>
+    </label>
+    <label class="contact-form-field">
+      <span class="sr-only">Nomor telepon</span>{{ icon('call', 'size-5', 'nomor-telepon') }}
+      <input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="Nomor Telepon" required>
+    </label>
+    <label class="contact-form-field contact-form-message">
+      <span class="sr-only">Pertanyaan</span>
+      <textarea name="message" rows="5" maxlength="700" placeholder="Bagaimana kami dapat membantu Anda?" required></textarea>
+    </label>
+    <div class="border-t border-neutral-200 pt-4">
+      <button type="submit" class="flex w-full items-center justify-between rounded-full bg-[#0866AE] px-7 py-4 text-base font-medium text-white transition hover:bg-[#0879BD] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0879bd]">
+        <span>Submit</span>{{ icon('arrow-left', 'size-5', 'submit') }}
+      </button>
+    </div>
+  </form>
+  <p class="mt-5 text-sm sm:text-base leading-5 sm:leading-7 text-neutral-500">{{ questionFormNote | default('*Tim Grand Ontama siap membantu menjawab pertanyaan dan memberikan informasi hunian sesuai kebutuhan Anda.') }}</p>
+</div>

@@ -1,0 +1,8 @@
+{% from "components/icon.njk" import icon %}
+<a href="https://wa.me/{{ site.phone }}" target="_blank" rel="noopener noreferrer" aria-label="Hubungi Kami via WhatsApp" class="group fixed bottom-4 left-4 z-50 inline-flex h-14 w-14 items-center overflow-hidden rounded-full rounded-bl-none border-2 border-white bg-brand pl-2.5 text-base font-medium text-white shadow-lg transition-all duration-300 ease-out hover:w-50 hover:pr-3 lg:bottom-6 lg:left-6 md:h-18 md:w-18 md:pl-3 md:hover:w-56 lg:h-20 lg:w-20 lg:pl-3.5 lg:hover:w-60">
+  {{ icon('whatsapp', 'size-8 md:size-11 lg:size-12', 'whatsapp') }}
+  <span class="ml-4 whitespace-nowrap opacity-0 transition-opacity duration-300 group-hover:opacity-100">Hubungi Kami!</span>
+</a>
+<button id="scrollTopBtn" type="button" aria-label="Kembali ke atas" class="pointer-events-none fixed bottom-4 right-4 z-40 grid h-14 w-14 cursor-pointer place-items-center rounded-full border-2 border-white bg-brand text-white opacity-0 shadow-lg transition lg:bottom-6 lg:right-6">
+  {{ icon('arrow-up', 'size-6 icon-white', 'kembali-ke-atas') }}
+</button>

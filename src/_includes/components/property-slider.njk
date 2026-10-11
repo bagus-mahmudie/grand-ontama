@@ -1,0 +1,25 @@
+{% from "components/icon.njk" import icon %}
+<div class="relative mt-12">
+  <div data-home-carousel data-loop-carousel data-drag-carousel class="home-horizontal-carousel home-property-carousel flex gap-3 sm:gap-5 overflow-x-auto">
+    {% for property in properties %}
+    <article class="home-property-card">
+      <a href="{{ property.href }}" class="block">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="{{ property.image }}" alt="{{ property.alt }}" width="500" height="316" loading="lazy" decoding="async" draggable="false" class="h-auto w-full transition duration-500 hover:scale-105">
+        </div>
+        <div class="px-2 pb-2 pt-5">
+          <h{{ 2 if pageKey == "beranda" else 3 }} class="flex items-center gap-2 text-2xl font-semibold text-neutral-900">{{ property.name }} {{ icon('verified', 'size-6', 'terverifikasi') }}</h{{ 2 if pageKey == "beranda" else 3 }}>
+          <div class="mt-4 flex w-full flex-wrap items-center justify-start gap-x-5 gap-y-2 text-base text-neutral-500">
+            <span class="inline-flex items-center gap-2 whitespace-nowrap">{{ icon('conference-room', 'size-5', 'kamar-tidur') }}{{ property.bedrooms }}</span>
+            <span class="inline-flex items-center gap-2 whitespace-nowrap">{{ icon('bathroom-outline', 'size-5', 'kamar-mandi') }}{{ property.bathrooms }}</span>
+            <span class="inline-flex items-center gap-2 whitespace-nowrap">{{ icon('align-selection', 'size-5', 'luas-bangunan') }}{{ property.area }}</span>
+          </div>
+          <p class="mt-4 text-xl font-semibold text-neutral-900">{{ property.price }}</p>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+  <button data-carousel-prev type="button" aria-label="Properti sebelumnya" class="slider-arrow home-property-prev left-2">{{ icon('arrow-outlined', 'size-8', 'prev') }}</button>
+  <button data-carousel-next type="button" aria-label="Properti berikutnya" class="slider-arrow home-property-next right-2">{{ icon('arrow-outlined-1', 'size-8', 'next') }}</button>
+</div>

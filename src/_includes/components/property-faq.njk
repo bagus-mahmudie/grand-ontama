@@ -1,0 +1,23 @@
+  <section class="px-5 pb-10 pt-10 sm:px-7 sm:pb-20 lg:px-10 lg:pb-24 lg:pt-24">
+    <div class="mx-auto max-w-5xl">
+      <div class="text-center">
+        <h2 class="home-hero-title text-4xl leading-tight tracking-[-.01em] text-neutral-900 sm:text-5xl lg:text-6xl">Frequently Asked Questions</h2>
+        <p class="mx-auto mt-5 max-w-3xl text-base leading-7 text-neutral-500">Tanya Jawab Seputar Perumahan Bogor Grand Ontama</p>
+      </div>
+
+      {% set faqs = detail.faqs %}
+      <div class="mt-12 space-y-5">
+        {% for faq in faqs %}
+        <article data-faq-item data-active="{% if loop.index == 2 %}true{% else %}false{% endif %}" class="rounded-2xl {% if loop.index == 2 %}bg-brand{% else %}bg-white{% endif %} p-5 shadow-[0_12px_35px_rgba(31,41,55,.055)] transition sm:p-6">
+          <h3 class="m-0 text-base font-normal"><button id="{{ propertyKey }}-faq-button-{{ loop.index }}" data-faq-button type="button" aria-controls="{{ propertyKey }}-faq-answer-{{ loop.index }}" aria-expanded="{% if loop.index == 2 %}true{% else %}false{% endif %}" class="flex w-full cursor-pointer items-center justify-between gap-5 text-left">
+            <span class="text-lg font-medium leading-7 {% if loop.index == 2 %}text-white{% else %}text-content-title{% endif %}">{{ faq.question }}</span>
+            <img data-faq-icon data-icon="{% if loop.index == 2 %}minus{% else %}plus{% endif %}" src="/assets/icons/{% if loop.index == 2 %}minus{% else %}plus{% endif %}.webp" alt="{% if loop.index == 2 %}tutup-pertanyaan{% else %}buka-pertanyaan{% endif %}" class="local-icon size-6 {% if loop.index == 2 %}icon-white{% else %}icon-brand{% endif %} shrink-0">
+          </button></h3>
+          <div id="{{ propertyKey }}-faq-answer-{{ loop.index }}" data-faq-content role="region" aria-labelledby="{{ propertyKey }}-faq-button-{{ loop.index }}" class="{% if loop.index != 2 %}hidden{% endif %}">
+            <p class="mt-5 max-w-4xl text-base leading-7 {% if loop.index == 2 %}text-white/90{% else %}text-content-grey{% endif %}">{{ faq.answer }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

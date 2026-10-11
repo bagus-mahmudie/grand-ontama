@@ -1,0 +1,103 @@
+---
+layout: layouts/base.njk
+updatedAt: "2026-09-09"
+permalink: "kontak.html"
+title: "Konsultasi Grand Ontama: Bantuan KPR & Survei Curug Bogor"
+description: "Layanan konsultasi Grand Ontama resmi. Temukan unit impian di Jl. Permata, Curug, Kab. Bogor, lengkap dengan promo & simulasi cicilan. Konsultasi gratis hari ini!"
+keywords: "konsultasi grand ontama"
+ogTitle: "Konsultasi Grand Ontama: Bantuan KPR & Survei Curug Bogor"
+ogImage: "https://grandontama.com/assets/img/thumbnail/tentang-kami.webp"
+canonical: "https://grandontama.com/kontak"
+pageKey: "kontak"
+---
+{% from "components/icon.njk" import icon %}
+<main class="bg-[#f4f4f3] pt-32 sm:pt-36 lg:pt-42">
+  <section class="px-5 pb-10 sm:px-7 sm:pb-12 lg:min-h-[calc(100svh-8rem)] lg:px-10 lg:pb-16">
+    <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1.02fr] lg:gap-14 xl:gap-20">
+      <div class="order-2 flex flex-col sm:order-none">
+        <div>
+          <h1 class="contact-page-title max-w-xl text-5xl font-medium leading-[1.18] tracking-[-.01em] text-neutral-900 sm:text-6xl lg:text-[64px]">
+            Lihat Rumah<br>Grand Ontama<br>Langsung
+          </h1>
+          <p class="mt-8 max-w-lg text-base leading-7 text-neutral-500">
+            Jadwalkan kunjungan dan rasakan langsung kenyamanan rumah, fasilitas, lingkungan, serta suasana Grand Ontama sebelum menentukan pilihan hunian keluarga.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-auto">
+          <article class="rounded-2xl bg-white p-5 shadow-[0_16px_45px_rgba(31,41,55,.055)] sm:p-6">
+            <div class="flex items-center gap-4">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-neutral-50 text-neutral-800">{{ icon('office', 'size-6', 'kantor-pusat') }}</span>
+              <h2 class="text-xl font-medium text-neutral-900 sm:text-2xl">Kantor Pusat</h2>
+            </div>
+            <p class="mt-5 text-base leading-7 text-neutral-500">{{ site.address }}</p>
+          </article>
+
+          <article class="rounded-2xl bg-white p-5 shadow-[0_16px_45px_rgba(31,41,55,.055)] sm:p-6">
+            <div class="flex items-center gap-4">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-neutral-50 text-neutral-800">{{ icon('clock', 'size-6', 'jam-kerja') }}</span>
+              <h2 class="text-xl font-medium text-neutral-900 sm:text-2xl">Jam Kerja</h2>
+            </div>
+            <p class="mt-5 text-base leading-7 text-neutral-500">Senin – Minggu, 08.00 – 18.00 WIB</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="order-1 self-start rounded-[1.75rem] bg-white p-5 shadow-[0_18px_55px_rgba(31,41,55,.06)] sm:order-none sm:p-7 lg:p-6">
+        <h2 class="text-3xl font-medium leading-tight tracking-[-.025em] text-neutral-900 ">Booking Jadwal Kunjungan</h2>
+        <p class="mt-2 text-base leading-7 text-neutral-500">Pilih waktu yang nyaman untuk mengunjungi Grand Ontama.</p>
+
+        <form data-whatsapp-contact data-whatsapp-number="{{ site.phone }}" class="mt-5 space-y-4">
+          <label class="contact-form-field">
+            <span class="sr-only">Nama lengkap</span>
+            {{ icon('person', 'size-5', 'nama-lengkap') }}
+            <input type="text" name="name" autocomplete="name" maxlength="80" placeholder="Nama lengkap" required>
+          </label>
+
+          <label class="contact-form-field">
+            <span class="sr-only">Nomor telepon</span>
+            {{ icon('call', 'size-5', 'nomor-telepon') }}
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="Nomor Telepon" required>
+          </label>
+
+          <div data-contact-calendar class="contact-date-picker">
+            <button data-calendar-trigger type="button" class="contact-form-field contact-date-trigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="contact-calendar-popover">
+              {{ icon('calendar', 'size-5', 'pilih-tanggal-kunjungan') }}
+              <span data-calendar-selected class="min-w-0 flex-1 text-left">Pilih tanggal kunjungan</span>
+              {{ icon('chevron-down', 'size-4 shrink-0', 'pilih-tanggal-kunjungan') }}
+            </button>
+            <input data-contact-date type="hidden" name="date">
+
+            <div id="contact-calendar-popover" data-calendar-popover class="contact-calendar" role="dialog" aria-label="Pilih tanggal kunjungan" hidden>
+              <div class="contact-calendar-header">
+                <strong data-calendar-month></strong>
+                <div class="flex items-center gap-1">
+                  <button data-calendar-prev type="button" aria-label="Bulan sebelumnya">{{ icon('chevron-left', 'size-4', 'prev') }}</button>
+                  <button data-calendar-next type="button" aria-label="Bulan berikutnya">{{ icon('chevron-right', 'size-4', 'next') }}</button>
+                </div>
+              </div>
+              <div class="contact-calendar-weekdays" aria-hidden="true">
+                <span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span>
+              </div>
+              <div data-calendar-days class="contact-calendar-days" role="grid"></div>
+            </div>
+          </div>
+
+          <label class="contact-form-field contact-form-message">
+            <span class="sr-only">Pesan</span>
+            <textarea name="message" rows="5" maxlength="700" placeholder="Masukan Pesan Anda"></textarea>
+          </label>
+
+          <div class="border-t border-neutral-200 pt-4">
+            <button type="submit" class="flex w-full items-center justify-between rounded-full bg-[#0866AE] px-7 py-4 text-base font-medium text-white transition hover:bg-[#0879BD] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0879bd] sm:text-lg">
+              <span>Kirim Pesan</span>
+              {{ icon('arrow-left', 'size-5', 'kirim-pesan') }}
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-5 text-base leading-7 text-neutral-500">*Tim Grand Ontama siap membantu menjawab pertanyaan dan memberikan informasi hunian sesuai kebutuhan Anda.</p>
+      </div>
+    </div>
+  </section>
+</main>

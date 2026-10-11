@@ -1,0 +1,125 @@
+---
+layout: layouts/base.njk
+updatedAt: "2026-09-09"
+permalink: "index.html"
+title: "Grand Ontama | Beranda"
+description: "Grandontama Properti menawarkan pilihan rumah dijual di Gunung Sindur, Bogor. Temukan hunian modern dengan lokasi strategis, dekat fasilitas umum dan akses mudah."
+keywords: "grandontama, rumah dijual bogor, rumah gunung sindur"
+ogTitle: "Grandontama Properti di Gunung Sindur Jual Rumah dengan Lokasi Strategis"
+ogImage: "https://grandontama.com/assets/img/pages/homepage/grand-ontama.png"
+canonical: "https://grandontama.com/"
+pageKey: "beranda"
+---
+{% from "components/icon.njk" import icon %}
+{% set properties = sliders.homepage.properties %}
+{% set facilities = sliders.homepage.facilities %}
+
+<main class="overflow-x-hidden bg-[#f4f4f3]">
+  <section class="home-hero relative overflow-visible bg-[linear-gradient(180deg,#0787cf_0%,#58afe0_43%,#f4f4f3_100%)] pb-10 pt-31 text-white sm:pb-12 sm:pt-36 lg:pb-6 lg:pt-39">
+    <div class="home-hero-scene absolute inset-0 overflow-hidden" aria-hidden="true">
+      <img src="/assets/img/pages/homepage/grand-ontama.png" alt="grand-ontama" width="1933" height="1387" fetchpriority="high" decoding="async" class="home-hero-art">
+      <div class="home-hero-fade"></div>
+    </div>
+
+  </section>
+
+  <section class="home-benefit-wrap relative z-10 px-5 pb-10 sm:px-7 sm:pb-12 lg:px-10 lg:pb-7">
+      <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-3">
+        <article class="rounded-2xl bg-white p-5 text-neutral-900 shadow-[0_18px_45px_rgba(31,45,56,.10)] sm:p-6">
+          <span class="grid h-20 w-20 place-items-center rounded-full bg-neutral-100 text-[#0879bd]">{{ icon('location-fill', 'size-10', 'lokasi-strategis') }}</span>
+          <p class="mt-5 text-xl font-semibold sm:text-2xl">Lokasi Strategis</p>
+          <p class="mt-3 text-sm leading-6 text-neutral-500 sm:text-base">Nikmati kemudahan akses menuju stasiun, mall, sekolah, dan rumah sakit terdekat.</p>
+        </article>
+        <article class="rounded-2xl bg-white p-5 text-neutral-900 shadow-[0_18px_45px_rgba(31,45,56,.10)] sm:p-6">
+          <span class="grid h-20 w-20 place-items-center rounded-full bg-neutral-100 text-[#0879bd]">{{ icon('ai-portrait-spark', 'size-10', 'fasilitas-premium') }}</span>
+          <p class="mt-5 text-xl font-semibold sm:text-2xl">Fasilitas Premium</p>
+          <p class="mt-3 text-sm leading-6 text-neutral-500 sm:text-base">Hidup lebih sehat dengan fasilitas lapangan padel, tenis, dan mushola eksklusif.</p>
+        </article>
+        <article class="rounded-2xl bg-white p-5 text-neutral-900 shadow-[0_18px_45px_rgba(31,45,56,.10)] sm:p-6">
+          <span class="grid h-20 w-20 place-items-center rounded-full bg-neutral-100 text-[#0879bd]">{{ icon('home-bold', 'size-10', 'tiga-tipe-pilihan') }}</span>
+          <p class="mt-5 text-xl font-semibold sm:text-2xl">3 Tipe Pilihan</p>
+          <p class="mt-3 text-sm leading-6 text-neutral-500 sm:text-base">Temukan rumah impian melalui tipe Luxora, Verona, atau Melodia modern.</p>
+        </article>
+      </div>
+  </section>
+
+  <section class="px-5 pb-10 pt-10 sm:px-7 sm:pb-12 sm:pt-16 lg:px-10 lg:pb-6 lg:pt-20">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-5 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
+        <h1 class="text-4xl font-medium leading-tight tracking-[-.01em] text-neutral-900 sm:text-5xl lg:text-6xl">Pilihan Tipe Hunian<br>Grand Ontama</h1>
+        <p class="max-w-xl text-base font-normal leading-7 text-neutral-500">Temukan tipe hunian ideal sesuai kebutuhan Anda, nikmati desain modern, lokasi strategis, dan investasi menjanjikan bersama Grand Ontama sekarang juga.</p>
+      </div>
+
+      {% include "components/property-slider.njk" %}
+    </div>
+  </section>
+
+  <section class="bg-[#f4f4f3] px-5 pb-3 lg:pb-6 pt-12 sm:px-7  lg:px-10  lg:pt-24">
+    <div class="mx-auto max-w-7xl text-center">
+      <h2 class="mx-auto max-w-5xl text-4xl font-medium leading-tight tracking-[-.01em] text-neutral-900 sm:text-5xl lg:text-6xl">Menjelajahi Detail Interior Grand Ontama yang Elegan & Modern</h2>
+      <p class="mx-auto mt-6 max-w-3xl text-base leading-7 text-neutral-500">Rasakan kenyamanan setiap sudut interior dengan desain modern, material berkualitas, serta tata ruang fungsional yang menghadirkan kehangatan bagi keluarga.</p>
+      <a href="/assets/docs/brosur-grand-ontama.pdf" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-3 rounded-full bg-[#0866AE] px-8 py-3 text-lg font-normal text-white transition hover:bg-[#0879BD]">Brosur Grand Ontama {{ icon('download', 'size-5', 'brosur-grand-ontama') }}</a>
+
+      <div data-interior-stage class="home-interior-stage relative mx-auto max-w-5xl lg:max-w-6xl" role="region" aria-label="Carousel detail interior Grand Ontama" aria-roledescription="carousel" tabindex="0">
+        <svg aria-hidden="true" class="absolute h-0 w-0" focusable="false">
+          <defs>
+            <clipPath id="home-interior-mask" clipPathUnits="objectBoundingBox">
+              <path d="M .02 .02 C .25 .12 .75 .12 .98 .02 Q 1 .02 1 .055 L 1 .945 Q 1 .98 .98 .98 C .75 .88 .25 .88 .02 .98 Q 0 .98 0 .945 L 0 .055 Q 0 .02 .02 .02 Z" />
+            </clipPath>
+          </defs>
+        </svg>
+        <div data-interior-slider class="home-interior-track">
+          {% for interior in sliders.homepage.interiors %}
+            <figure class="home-interior-panel"><img src="{{ interior.image }}" alt="{{ interior.alt }}" width="424" height="646" loading="lazy" draggable="false" class="home-interior-image"></figure>
+          {% endfor %}
+        </div>
+        <button data-interior-prev type="button" aria-label="Interior sebelumnya" class="slider-arrow slider-arrow-light home-interior-prev left-2">{{ icon('chevron-left', 'size-6', 'prev') }}</button>
+        <button data-interior-next type="button" aria-label="Interior berikutnya" class="slider-arrow slider-arrow-light home-interior-next right-2">{{ icon('chevron-right', 'size-6', 'next') }}</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="px-5 pb-10 pt-10 sm:px-7 sm:pb-12 lg:px-10 lg:pb-6 lg:pt-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-5 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
+        <h2 class="text-4xl font-medium leading-tight tracking-[-.01em] text-neutral-900 sm:text-5xl lg:text-6xl">Fasilitas Lengkap<br>Grand Ontama</h2>
+        <p class="max-w-xl text-base leading-7 text-neutral-500">Nikmati beragam fasilitas modern yang dirancang mendukung kenyamanan, keamanan, aktivitas, dan kualitas hidup seluruh anggota keluarga setiap hari.</p>
+      </div>
+
+      {% include "components/facility-slider.njk" %}
+    </div>
+  </section>
+
+  <section class="px-5 pb-0 pt-10 sm:px-7 sm:pb-12 lg:px-10 lg:pb-6 lg:pt-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="text-center">
+        <h2 class="mx-auto max-w-4xl text-4xl font-medium leading-tight tracking-[-.01em] text-neutral-900 sm:text-5xl lg:text-6xl">Lokasi Grand Ontama Dekat Semua Kebutuhan</h2>
+        <p class="mx-auto mt-6 max-w-3xl text-base leading-7 text-neutral-500">Akses mudah menuju sekolah, rumah sakit, pusat perbelanjaan, perkantoran, dan fasilitas penting lainnya untuk mendukung aktivitas keluarga setiap hari.</p>
+      </div>
+
+      <div class="mt-12 grid gap-7 lg:grid-cols-[.95fr_1.05fr] lg:items-stretch">
+        <div class="relative min-h-105 overflow-hidden rounded-2xl bg-neutral-200 lg:min-h-140">
+          <div id="locationImageSlider" class="absolute inset-0 flex transition-transform duration-500"></div>
+          <div data-location-dots class="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2"></div>
+        </div>
+        <div class="location-card-slider grid pb-10 sm:pb-0 gap-3 sm:gap-5">
+          {% for location in sliders.homepage.locations %}
+            <button type="button" data-location-card data-location-images="{{ location.sources | join('|') }}" data-location-alts="{{ location.alts | join('|') }}"{% if location.default %} data-location-default{% endif %} class="location-choice text-left"><p class="font-semibold text-lg">{{ location.title }}</p><span>{{ location.description }}</span></button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="home-contact-section px-5 pb-10 pt-12 sm:px-7 sm:pb-12 lg:px-10 lg:pb-16 lg:pt-24">
+    <div class="relative z-10 mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-white p-5 shadow-[0_20px_55px_rgba(31,41,55,.10)] sm:p-8 lg:grid-cols-[1fr_1.15fr] lg:gap-10 lg:p-5 lg:pl-10">
+      <div class="flex flex-col justify-center py-6 lg:py-10">
+        <h2 class="text-4xl font-medium leading-tight tracking-[-.01em] text-neutral-900 sm:text-5xl">Wujudkan Hunian<br>Impian Sekarang</h2>
+        <p class="mt-6 max-w-md text-base leading-7 text-neutral-500">Segera konsultasikan kebutuhan hunian Anda dan dapatkan penawaran terbaik serta proses pembelian yang mudah bersama kami.</p>
+        <a href="/kontak" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex w-fit items-center gap-8 rounded-full bg-[#0866AE] px-7 py-3.5 font-medium text-white transition hover:bg-[#0879BD]">Konsultasi Gratis {{ icon('arrow-outlined-1', 'size-5', 'konsultasi-gratis') }}</a>
+      </div>
+      <img src="/assets/img/pages/homepage/konsultasi-grand-ontama.webp" alt="konsultasi-grand-ontama" loading="lazy" decoding="async" class="order-first h-full min-h-75 w-full rounded-2xl object-cover lg:order-none">
+    </div>
+  </section>
+</main>
