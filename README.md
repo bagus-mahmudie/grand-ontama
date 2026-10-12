@@ -1,58 +1,58 @@
 # Grand Ontama
 
-Website perumahan Grand Ontama dengan informasi tipe rumah, fasilitas, galeri, dan artikel properti.
+Grand Ontama residential property website featuring house types, facilities, a gallery, and property articles.
 
-**Status:** Live · [Buka website](https://grandontama.com/)
+**Status:** Live · [Visit website](https://grandontama.com/)
 
-## Fitur
+## Features
 
-- Halaman detail properti dan fasilitas kawasan
-- Pengolahan gambar responsif saat build
-- Formulir kontak dengan SMTP dan reCAPTCHA
+- Property detail pages and residential facilities
+- Responsive image processing during builds
+- Contact form with SMTP and reCAPTCHA
 
-## Teknologi
+## Technology
 
 Eleventy 3, Nunjucks, Tailwind CSS 4, Sharp, PHP.
 
-## Menjalankan secara lokal
+## Running Locally
 
-Pasang Node.js dan npm sesuai persyaratan dependensi pada `package-lock.json`.
+Install Node.js and npm versions that meet the dependency requirements in `package-lock.json`.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Buka alamat server yang ditampilkan di terminal. Untuk build:
+Open the server address shown in the terminal. To build the site:
 
 ```sh
 npm run build
 ```
 
-Hasil build berada di `_site/`. Folder hasil build tidak menjadi sumber utama repository.
+Build output is written to `_site/`. The build output directory is not the repository's primary source.
 
-## Struktur
+## Structure
 
-- `src/` — halaman, template, data, dan aset.
-- `.eleventy.js` — konfigurasi generator website.
-- `package.json` — dependensi dan perintah pengembangan.
+- `src/` — pages, templates, data, and assets.
+- `.eleventy.js` — site generator configuration.
+- `package.json` — dependencies and development commands.
 
 ## Deployment
 
-Konfigurasi email disediakan melalui `server/config.example.php`; ikuti lokasi konfigurasi yang digunakan `server/mailer/send-contact.php`. Jalankan `composer install --working-dir=server` untuk memasang PHPMailer sebelum deployment. Sertifikat unit dan dokumen pemeriksaan tanah tidak disertakan dalam repository.
+Email configuration is provided through `server/config.example.php`; follow the configuration path used by `server/mailer/send-contact.php`. Run `composer install --working-dir=server` to install PHPMailer before deployment. Property unit certificates and land inspection documents are not included in the repository.
 
-Versi awal tersedia sebagai proyek terpisah: [Grand Ontama V1](https://github.com/bagus-mahmudie/grand-ontama-v1).
+The initial version is available as a separate project: [Grand Ontama V1](https://github.com/bagus-mahmudie/grand-ontama-v1).
 
-## Konfigurasi privat
+## Private Configuration
 
-Salin template berikut ke nama file lokalnya, lalu isi nilai untuk lingkungan Anda:
+Copy the following templates to their corresponding local filenames, then enter the values for your environment:
 
-| Template | File lokal |
+| Template | Local File |
 | --- | --- |
 | `grand-ontama-config.example.php` | `grand-ontama-config.php` |
 
-File konfigurasi lokal diabaikan oleh Git. Jangan memasukkan password, API key, atau data akun ke source code.
+Local configuration files are ignored by Git. Do not include passwords, API keys, or account data in the source code.
 
-## Catatan repository
+## Repository Notes
 
-Dependensi terpasang, cache, file `.env`, database, dan unggahan pengguna tidak disertakan. Nama merek dan aset pihak ketiga tetap mengikuti hak pemiliknya. Tidak ada lisensi penggunaan ulang yang diberikan melalui repository ini.
+Installed dependencies, caches, `.env` files, databases, and user uploads are not included. Brand names and third-party assets remain subject to their respective owners' rights. This repository does not grant a license for reuse.
