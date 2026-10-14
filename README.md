@@ -4,6 +4,10 @@ Grand Ontama residential property website featuring house types, facilities, a g
 
 **Status:** Live · [Visit website](https://grandontama.com/)
 
+## Preview
+
+[![Grand Ontama — application preview](docs/screenshots/project-preview.jpg)](docs/screenshots/project-preview.jpg)
+
 ## Features
 
 - Property detail pages and residential facilities
